@@ -1,0 +1,6 @@
+<button (click)="cambiarContador(-1)" [class]="buttonStyle">-</button>
+<div [style.font-size]="'20px'">{{ counter }}</div>
+<button (click)="cambiarContador(+1)" [class]="buttonStyle">+</button>
+<p>Contador signal:{{ signalCounter() }}</p>
+<p>{{ computedSignalText() }}</p>
+<p>{{ contadorATexto(counter) }}</p>

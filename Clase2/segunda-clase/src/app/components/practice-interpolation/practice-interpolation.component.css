@@ -1,0 +1,13 @@
+.estilos-generales {
+  width: 100px;
+  height: 100px;
+  border: black solid 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.bordeDiv4 {
+  border-color: yellow;
+}

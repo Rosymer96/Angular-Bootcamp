@@ -1,0 +1,12 @@
+<p [style.color]="colorP">Nombre: {{ nombre }}</p>
+<p [class]="nombreClase">Edad: {{ edad }}</p>
+
+<p [style.display]="ocultarDireccion ? 'none' : 'block'">
+  Direccion: {{ datosDireccion.direccion }}
+</p>
+
+<button (click)="onClick()" [disabled]="botonDesabilitado">Click</button>
+
+<input type="text" (change)="changeInput($event)" />
+
+<p>Input: {{ valorInput }}</p>

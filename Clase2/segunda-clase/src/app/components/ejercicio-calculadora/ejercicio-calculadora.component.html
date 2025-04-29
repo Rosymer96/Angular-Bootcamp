@@ -1,0 +1,11 @@
+<div [class]="estilos">
+  <label>Valor 1</label>
+  <input type="number" (change)="onChangeValor1($event)" />
+  <label>Valor 2</label>
+  <input type="text" (change)="onChangeValor2($event)" />
+  <p>Resultado: {{ resultado }}</p>
+  <div [class]="buttonStyle" (click)="substrac()">-</div>
+  <div [class]="buttonStyle" (click)="add(valor1, valor2)">+</div>
+  <div [class]="buttonStyle">*</div>
+  <div [class]="buttonStyle">/</div>
+</div>
