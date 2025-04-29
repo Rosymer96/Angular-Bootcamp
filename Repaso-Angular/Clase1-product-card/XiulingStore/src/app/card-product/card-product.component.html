@@ -1,0 +1,11 @@
+<div class="product-pill">
+  <div class="product">
+    <div class="img-container">
+      <img class="img" src="{{ productImgPath }}" alt="{{ productName }}" />
+    </div>
+    <h3 class="product-name">{{ productName }}</h3>
+    <p class="product-description">{{ productDescription }}</p>
+    <p class="product-price">€ {{ productPrice }}</p>
+    <button class="product-btn" (click)="pushCar()">Agregar al Carrito</button>
+  </div>
+</div>

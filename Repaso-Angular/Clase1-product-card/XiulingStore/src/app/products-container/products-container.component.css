@@ -1,0 +1,9 @@
+.products-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+app-card-product {
+  width: 33%;
+}

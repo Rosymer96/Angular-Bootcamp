@@ -9,3 +9,5 @@ import { Component } from '@angular/core';
 export class MiSegundoComponenteComponent {
   name: string = 'David';
 }
+
+

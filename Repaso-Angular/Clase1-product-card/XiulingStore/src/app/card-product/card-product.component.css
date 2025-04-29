@@ -1,0 +1,32 @@
+.product-pill {
+  padding: 10px;
+}
+.product {
+  padding: 20px;
+  background-color: rgb(231, 221, 241);
+  font-family: sans-serif;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.img-container {
+  overflow: hidden;
+}
+.img {
+  width: 100%;
+  height: auto;
+}
+.product-name {
+  font-weight: bold;
+}
+.product-price {
+  font-weight: bold;
+}
+.product-btn {
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: rgb(179, 137, 219);
+  border-radius: 10px;
+  border: solid black 1px;
+}
