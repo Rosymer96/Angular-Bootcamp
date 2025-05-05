@@ -1,0 +1,45 @@
+<form [class]="formStyles">
+  <label>Nombre:</label>
+  <input
+    type="text"
+    required
+    placeholder="Escribe tu nombre..."
+    (change)="onChangeValueName($event)"
+  />
+  <label>Email:</label>
+  <input
+    type="email"
+    required
+    placeholder="Escribe tu email..."
+    (change)="onChangeValueEmail($event)"
+  />
+  <label>Imagen url:</label>
+  <input
+    type="text"
+    required
+    placeholder="Pega el url de tu imagen"
+    (change)="onChangeValueImg($event)"
+  />
+  <label>Color favorito:</label>
+  <input
+    type="color"
+    value="#ffffff"
+    required
+    (change)="onChangeValueColor($event)"
+  />
+  <button type="button" [class]="btnStyles" (click)="showCard()">Crear</button>
+</form>
+
+<div
+  [style.background-color]="colorFav"
+  [style.display]="styleShowCard"
+  [class]="divStyle"
+>
+  <div [class]="imgContainer">
+    <img src="{{ imgUrl }}" alt="{{ name }}" [class]="imgStyle" />
+  </div>
+  <p class="data">Nombre:</p>
+  <p class="data-information">{{ name }}</p>
+  <p class="data">Email:</p>
+  <p class="data-information">{{ email }}</p>
+</div>
