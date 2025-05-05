@@ -31,15 +31,19 @@
 </form>
 
 <div
-  [style.background-color]="colorFav"
+  [style.background-color]="usuario.colorFav"
   [style.display]="styleShowCard"
   [class]="divStyle"
 >
   <div [class]="imgContainer">
-    <img src="{{ imgUrl }}" alt="{{ name }}" [class]="imgStyle" />
+    <img
+      src="{{ usuario.imgUrl }}"
+      alt="{{ usuario.name }}"
+      [class]="imgStyle"
+    />
   </div>
   <p class="data">Nombre:</p>
-  <p class="data-information">{{ name }}</p>
+  <p class="data-information">{{ usuario.name }}</p>
   <p class="data">Email:</p>
-  <p class="data-information">{{ email }}</p>
+  <p class="data-information">{{ usuario.email }}</p>
 </div>

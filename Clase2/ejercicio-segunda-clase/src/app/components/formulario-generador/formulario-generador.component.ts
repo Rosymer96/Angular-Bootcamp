@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
 
+interface Usuario {
+  name: string | null;
+  email: string | null;
+  imgUrl: string | null;
+  colorFav: string | null;
+}
+
 @Component({
   selector: 'app-formulario-generador',
   imports: [],
@@ -7,52 +14,60 @@ import { Component } from '@angular/core';
   styleUrl: './formulario-generador.component.css',
 })
 export class FormularioGeneradorComponent {
-  name: string | null = null;
-  email: string | null = null;
-  imgUrl: string | null = null;
-  colorFav: string | null = null;
-  styleShowCard: string = 'none';
+  usuario: Usuario = {
+    name: null,
+    email: null,
+    imgUrl: null,
+    colorFav: null,
+  };
 
+  styleShowCard: string = 'none';
   formStyles: string = 'form-styles';
   btnStyles: string = 'btn-styles';
+
   onChangeValueName(evento: Event): void {
     const inputElement = evento.target as HTMLInputElement;
     if (inputElement) {
-      this.name = inputElement.value;
+      this.usuario.name = inputElement.value;
     } else {
-      this.name = null;
+      this.usuario.name = null;
     }
   }
 
   onChangeValueEmail(evento: Event): void {
     const inputElement = evento.target as HTMLInputElement;
     if (inputElement) {
-      this.email = inputElement.value;
+      this.usuario.email = inputElement.value;
     } else {
-      this.email = null;
+      this.usuario.email = null;
     }
   }
 
   onChangeValueImg(evento: Event): void {
     const inputElement = evento.target as HTMLInputElement;
     if (inputElement) {
-      this.imgUrl = inputElement.value;
+      this.usuario.imgUrl = inputElement.value;
     } else {
-      this.imgUrl = null;
+      this.usuario.imgUrl = null;
     }
   }
 
   onChangeValueColor(evento: Event): void {
     const inputElement = evento.target as HTMLInputElement;
     if (inputElement) {
-      this.colorFav = inputElement.value;
+      this.usuario.colorFav = inputElement.value;
     } else {
-      this.colorFav = null;
+      this.usuario.colorFav = null;
     }
   }
 
   showCard() {
-    console.log(this.name, this.email, this.imgUrl, this.colorFav);
+    console.log(
+      this.usuario.name,
+      this.usuario.email,
+      this.usuario.imgUrl,
+      this.usuario.colorFav
+    );
     if ((this.styleShowCard = 'none')) {
       this.styleShowCard = 'flex';
     } else return;
@@ -61,11 +76,4 @@ export class FormularioGeneradorComponent {
   divStyle: string = 'div-style';
   imgContainer: string = 'img-container';
   imgStyle: string = 'img-style';
-}
-
-interface Usuario {
-  name: string | null;
-  email: string | null;
-  imgUrl: string | null;
-  colorFav: string | null;
 }
