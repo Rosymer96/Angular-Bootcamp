@@ -43,7 +43,9 @@ export class EjercicioCalculadoraComponent {
     }
   }
 
-  mult() {}
+  mult(): void {
+    
+  }
 
   divide() {}
 }
