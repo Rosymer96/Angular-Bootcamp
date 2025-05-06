@@ -1,0 +1,7 @@
+<div class="container">
+  <app-form (onNameEmitted)="createCard($event, myForm)" #myForm></app-form>
+
+  @if(usuario){ @for(usuario of usuarios; track usuario){
+  <app-card [usuario]="usuario"></app-card>
+  } }
+</div>
