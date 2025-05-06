@@ -1,0 +1,11 @@
+<!-- <app-contenedor></app-contenedor> -->
+
+@if (mostrarMensaje){
+<p>Hola!</p>
+} @else if( mostrarSegundoMensaje){
+<p>Mostrar segundo mensaje</p>
+} @else {
+<p>Mostrar otro mensaje</p>
+}
+
+<p *ngIf="mostrarMensaje">Mostrar mensaje</p>

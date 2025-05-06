@@ -13,7 +13,6 @@
 
 @media only screen and (max-width: 932px) and (orientation: landscape) {
   * {
-    flex-direction: row;
     justify-content: space-around;
     gap: 0;
     padding: 20px 20px;
@@ -22,8 +21,7 @@
 
 @media (min-width: 768px) {
   * {
-    flex-direction: row;
     justify-content: space-around;
-    gap: 0;
+    gap: 20px;
   }
 }

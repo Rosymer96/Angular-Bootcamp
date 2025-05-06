@@ -1,0 +1,10 @@
+<p>componente-padre works!</p>
+<app-hijo
+  nombre="Alba"
+  [nombre]="nombrePadre"
+  [nombreRequired]="nombrePadre"
+  [nombreSignal]="nombreTio"
+  [nombreSignalRequired]="'nombreTio'"
+  (onCreateNombre)="createNombre($event)"
+>
+</app-hijo>

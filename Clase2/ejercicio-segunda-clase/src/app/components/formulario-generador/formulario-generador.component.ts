@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 interface Usuario {
   name: string | null;
@@ -9,7 +10,7 @@ interface Usuario {
 
 @Component({
   selector: 'app-formulario-generador',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './formulario-generador.component.html',
   styleUrl: './formulario-generador.component.css',
 })
@@ -21,56 +22,14 @@ export class FormularioGeneradorComponent {
     colorFav: null,
   };
 
-  styleShowCard: string = 'none';
   formStyles: string = 'form-styles';
   btnStyles: string = 'btn-styles';
-
-  onChangeValueName(evento: Event): void {
-    const inputElement = evento.target as HTMLInputElement;
-    if (inputElement) {
-      this.usuario.name = inputElement.value;
-    } else {
-      this.usuario.name = null;
-    }
-  }
-
-  onChangeValueEmail(evento: Event): void {
-    const inputElement = evento.target as HTMLInputElement;
-    if (inputElement) {
-      this.usuario.email = inputElement.value;
-    } else {
-      this.usuario.email = null;
-    }
-  }
-
-  onChangeValueImg(evento: Event): void {
-    const inputElement = evento.target as HTMLInputElement;
-    if (inputElement) {
-      this.usuario.imgUrl = inputElement.value;
-    } else {
-      this.usuario.imgUrl = null;
-    }
-  }
-
-  onChangeValueColor(evento: Event): void {
-    const inputElement = evento.target as HTMLInputElement;
-    if (inputElement) {
-      this.usuario.colorFav = inputElement.value;
-    } else {
-      this.usuario.colorFav = null;
-    }
-  }
+  usuarios: Usuario[] = [];
 
   showCard() {
-    console.log(
-      this.usuario.name,
-      this.usuario.email,
-      this.usuario.imgUrl,
-      this.usuario.colorFav
-    );
-    if ((this.styleShowCard = 'none')) {
-      this.styleShowCard = 'flex';
-    } else return;
+    this.usuarios.push({ ...this.usuario });
+    console.log(this.usuarios);
+    this.usuario = { name: null, email: null, imgUrl: null, colorFav: null };
   }
 
   divStyle: string = 'div-style';

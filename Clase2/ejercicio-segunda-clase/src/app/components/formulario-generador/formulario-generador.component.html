@@ -4,46 +4,52 @@
     type="text"
     required
     placeholder="Escribe tu nombre..."
-    (change)="onChangeValueName($event)"
+    [(ngModel)]="usuario.name"
+    name="name"
   />
   <label>Email:</label>
   <input
     type="email"
     required
     placeholder="Escribe tu email..."
-    (change)="onChangeValueEmail($event)"
+    [(ngModel)]="usuario.email"
+    name="email"
   />
   <label>Imagen url:</label>
   <input
     type="text"
     required
     placeholder="Pega el url de tu imagen"
-    (change)="onChangeValueImg($event)"
+    [(ngModel)]="usuario.imgUrl"
+    name="imgUrl"
   />
   <label>Color favorito:</label>
   <input
     type="color"
     value="#ffffff"
     required
-    (change)="onChangeValueColor($event)"
+    [(ngModel)]="usuario.colorFav"
+    name="colorFav"
   />
   <button type="button" [class]="btnStyles" (click)="showCard()">Crear</button>
 </form>
 
-<div
-  [style.background-color]="usuario.colorFav"
-  [style.display]="styleShowCard"
-  [class]="divStyle"
->
-  <div [class]="imgContainer">
-    <img
-      src="{{ usuario.imgUrl }}"
-      alt="{{ usuario.name }}"
-      [class]="imgStyle"
-    />
+<div class="container">
+  @for (usuario of usuarios; track usuario){
+  <div [style.background-color]="usuario.colorFav" [class]="divStyle">
+    <div [class]="imgContainer">
+      <img
+        src="{{ usuario.imgUrl }}"
+        alt="{{ usuario.name }}"
+        [class]="imgStyle"
+      />
+    </div>
+    <p class="data">Nombre:</p>
+    <p class="data-information">{{ usuario.name }}</p>
+    <p class="data">Email:</p>
+    <p class="data-information">{{ usuario.email }}</p>
   </div>
-  <p class="data">Nombre:</p>
-  <p class="data-information">{{ usuario.name }}</p>
-  <p class="data">Email:</p>
-  <p class="data-information">{{ usuario.email }}</p>
+  } @empty {
+  <p>Completa el formulario para generar la tarjeta.</p>
+  }
 </div>
