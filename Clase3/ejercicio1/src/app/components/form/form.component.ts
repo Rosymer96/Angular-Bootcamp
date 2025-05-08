@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,11 +10,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class FormComponent {
   name: string = '';
-  @Output() onNameEmitted = new EventEmitter<string>();
+  // @Output() onNameEmitted = new EventEmitter<string>();
+  onNameEmitted = output<string>();
 
   emitName(): void {
     if (this.name) {
       this.onNameEmitted.emit(this.name);
+      this.name = '';
     }
   }
 }

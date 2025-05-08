@@ -14,13 +14,12 @@ export class ContenedorComponent {
   usuario: Usuario | undefined;
   usuarios: Usuario[] = [];
 
-  createCard(name: string, formulario: FormComponent): void {
+  createCard(name: string): void {
     if (name.length > 0) {
       this.usuario = {
-        name,
+        name: name,
       };
       this.usuarios.push(this.usuario);
-      formulario.name = '';
     }
   }
 }

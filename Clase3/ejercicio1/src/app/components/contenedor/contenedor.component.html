@@ -1,7 +1,7 @@
 <div class="container">
-  <app-form (onNameEmitted)="createCard($event, myForm)" #myForm></app-form>
+  <app-form (onNameEmitted)="createCard($event)"></app-form>
 
-  @if(usuario){ @for(usuario of usuarios; track usuario){
-  <app-card [usuario]="usuario"></app-card>
+  @if(usuario){ @for(user of usuarios; track usuario){
+  <app-card [usuario]="usuario"> </app-card>
   } }
 </div>
