@@ -1,0 +1,7 @@
+<div *ngIf="usuario !== null" class="card">
+  <a [routerLink]="['/usuarios', 'detalle', usuario.id]"
+    >Nombre: {{ usuario.name }}
+  </a>
+  <p>Correo: {{ usuario.email }}</p>
+  <p *ngIf="usuario.address">Direccion: {{ usuario.address }}</p>
+</div>

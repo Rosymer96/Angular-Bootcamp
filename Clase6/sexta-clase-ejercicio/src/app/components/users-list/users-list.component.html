@@ -1,0 +1,7 @@
+<h3>Listado de Usuarios</h3>
+<a [routerLink]="['/usuario/crear']">Ir a Crear Usuario</a>
+<div class="list-container">
+  @for (usuario of usuarios; track $index) {
+  <app-users-card [usuario]="usuario"></app-users-card>
+  }
+</div>

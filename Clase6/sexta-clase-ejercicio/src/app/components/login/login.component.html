@@ -1,0 +1,35 @@
+<form class="form" [formGroup]="myForm" (submit)="submitLogin()">
+  <fieldset class="form-control">
+    <label>Nombre *</label>
+    <input type="text" name="name" id="name" formControlName="name" />
+    <p
+      class="error-message"
+      *ngIf="myForm.controls['name'].invalid && myForm.controls['name'].touched"
+    >
+      Campo obligatorio
+    </p>
+  </fieldset>
+
+  <fieldset class="form-control">
+    <label>Contraseña *</label>
+    <input
+      type="text"
+      name="password"
+      id="password"
+      formControlName="password"
+    />
+    <p
+      class="error-message"
+      *ngIf="
+        myForm.controls['password'].invalid &&
+        myForm.controls['password'].touched
+      "
+    >
+      Campo obligatorio
+    </p>
+  </fieldset>
+  <p *ngIf="messageError" class="error-message ml-075">{{ messageError }}</p>
+  <div class="button-container">
+    <button type="submit" class="button">Login</button>
+  </div>
+</form>

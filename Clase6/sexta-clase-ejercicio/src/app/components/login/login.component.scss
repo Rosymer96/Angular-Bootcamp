@@ -1,0 +1,32 @@
+.form-control {
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  margin-inline: 0;
+  input.ng-touched.ng-invalid {
+    border-color: rgb(231, 124, 124);
+  }
+}
+.error-message {
+  color: rgb(231, 124, 124);
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  font-size: small;
+  &.ml-075 {
+    margin-left: 0.75rem;
+  }
+}
+.button-container {
+  margin: 0.75rem;
+  .button {
+    background-color: #fabada;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #e58bb8;
+    border-radius: 3px;
+    width: 100%;
+    cursor: pointer;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
