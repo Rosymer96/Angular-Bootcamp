@@ -1,0 +1,18 @@
+{
+  "cats": [
+    {"id": 1, "title": "Cat 1", "description": "Lorem ", "imgUrl": "https://cataas.com/cat?some=1"},
+    {"id": 2, "title": "Cat 2", "description": "Lorem ipsum", "imgUrl": "https://cataas.com/cat?some=2"},
+    {"id": 3, "title": "Cat 3", "description": "Lorem ipsum, dolor ", "imgUrl": "https://cataas.com/cat?some=3"},
+    {"id": 4, "title": "Cat 4", "description": "Lorem ipsum, dolor sit ", "imgUrl": "https://cataas.com/cat?some=4"},
+    {"id": 5, "title": "Cat 5", "description": "Lorem ipsum, dolor sit amet", "imgUrl": "https://cataas.com/cat?some=5"},
+    {"id": 6, "title": "Cat 6", "description": "Lorem ipsum, dolor sit amet consectetur", "imgUrl": "https://cataas.com/cat?some=6"},
+    {"id": 7, "title": "Cat 7", "description": "Lorem ipsum, dolor sit amet consectetur adipisicing.", "imgUrl": "https://cataas.com/cat?some=7"},
+    {"id": 8, "title": "Cat 8", "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit.", "imgUrl": "https://cataas.com/cat?some=8"}
+  ],
+  "plantas": [
+    {"id": 1, "nombre": "Cedro", "tipo": "arbol", "tipoHoja": "caduca"}
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

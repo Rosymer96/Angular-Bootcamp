@@ -1,0 +1,15 @@
+<!-- <router-outlet /> -->
+<p>Mi fecha es {{ mifecha | date : "shortTime" }}</p>
+<p>Mi fecha es {{ mifecha | date : "fullTime" }}</p>
+<p>Mi fecha es {{ mifecha | date : "dd/MM/yy" }}</p>
+<p>Mi titulo es: {{ title | uppercase }}</p>
+<p>Mi titulo es: {{ title | lowercase }}</p>
+
+<p>Mi objeto es {{ miObjeto | json }}</p>
+<p>Mi titulo esta revertido</p>
+
+<input type="text" [(ngModel)]="valorInput" />
+
+<p>Mi input es {{ valorInput }}</p>
+
+<app-prueb-model [(valor)]="valorInput"></app-prueb-model>

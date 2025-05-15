@@ -1,0 +1,17 @@
+<form [formGroup]="miForm">
+  <div>
+    <label>Usuario</label>
+    <input formControlName="usuario" type="text" name="usuario" id="usuario" />
+  </div>
+  <div>
+    <label>Contrasena</label>
+    <input
+      formControlName="contrasena"
+      type="password"
+      name="contrasena"
+      id="contrasena"
+    />
+  </div>
+  <button type="button" (click)="rellenar()">rellenar</button>
+</form>
+>

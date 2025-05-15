@@ -1,4 +1,5 @@
-import { IUsuario } from './../../interfaces/usuario.d';
+import { UsuariosService } from './../../services/usuarios.service';
+import { IUsuario, IUsuarioCreacion } from './../../interfaces/usuario.d';
 import { NgIf } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import {
@@ -16,7 +17,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UsersCreateComponent implements OnInit {
   router = inject(Router);
+
   activateRoute = inject(ActivatedRoute);
+  usuariosService = inject(UsuariosService);
 
   usuarioId: string | null = null;
 
@@ -25,12 +28,9 @@ export class UsersCreateComponent implements OnInit {
       console.log('Parametros ruta', params);
       if (params['id']) {
         this.usuarioId = params['id'];
-        const usuarios: IUsuario[] = this.getUsuarios();
-        const usuario = usuarios.find((usuario) => {
-          return usuario.id === Number(this.usuarioId);
-        });
-        console.log('Usuario', usuario);
-
+        const usuario: IUsuario | null = this.usuariosService.getById(
+          Number(this.usuarioId)
+        );
         if (!usuario) {
           this.router.navigate(['/usuarios']);
         } else {
@@ -64,13 +64,7 @@ export class UsersCreateComponent implements OnInit {
       return;
     }
 
-    const usuarios: IUsuario[] = this.getUsuarios();
-
-    console.log('usuarios', usuarios, usuarios?.length);
-    const idsUsuarios: number[] = usuarios.map((usuario) => usuario.id);
-    const maxId: number = Math.max(...idsUsuarios, 0);
-    const nuevoUsuario: IUsuario = {
-      id: maxId + 1,
+    const nuevoUsuario: IUsuarioCreacion = {
       name: this.myForm.value.name!,
       password: this.myForm.value.password!,
       email: this.myForm.value.email!,
@@ -78,24 +72,18 @@ export class UsersCreateComponent implements OnInit {
       address: this.myForm.value.address || undefined,
     };
     if (this.usuarioId) {
-      const usuariosFiltrados = usuarios.filter((usuario) => {
-        return usuario.id !== Number(this.usuarioId);
+      this.usuariosService.edit({
+        id: Number(this.usuarioId),
+        ...nuevoUsuario,
       });
-      usuariosFiltrados.push(nuevoUsuario);
-      localStorage.setItem('usuarios', JSON.stringify(usuariosFiltrados));
     } else {
-      usuarios.push(nuevoUsuario);
-      localStorage.setItem('usuarios', JSON.stringify(usuarios));
+      this.usuariosService.create(nuevoUsuario);
       this.router.navigate(['/usuarios']);
     }
   }
   cancelarOBorrar(): void {
     if (this.usuarioId) {
-      const usuarios: IUsuario[] = this.getUsuarios();
-      const usuariosFiltrados = usuarios.filter((usuario) => {
-        return usuario.id !== Number(this.usuarioId);
-      });
-      localStorage.setItem('usuarios', JSON.stringify(usuariosFiltrados));
+      this.usuariosService.delete(Number(this.usuarioId));
       this.router.navigate(['usuarios']);
     } else {
       this.router.navigate(['usuarios']);

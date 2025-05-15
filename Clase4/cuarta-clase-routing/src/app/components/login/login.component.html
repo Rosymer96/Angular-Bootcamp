@@ -1,0 +1,11 @@
+<div class="container">
+  <label for="usuario">Usuario:</label>
+  <input type="text" [(ngModel)]="usuario" placeholder="Ingresa tu usuario" />
+  <label for="contrasena">Contrasena:</label>
+  <input
+    type="password"
+    [(ngModel)]="contrasena"
+    placeholder="Ingresa tu contrasena"
+  />
+  <button (click)="hacerLogin()">Login</button>
+</div>

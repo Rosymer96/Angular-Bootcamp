@@ -1,0 +1,14 @@
+<button type="button" (click)="crearElemento()">Añadir Elemento</button>
+<button type="button" (click)="eliminarElemento()">Eliminar Elemento</button>
+<!-- 
+@for (item of listado; track $index){
+{{ $index }}
+<app-elemento-listado [texto]="item"> </app-elemento-listado>
+} -->
+
+<input type="text" [(ngModel)]="valorInput" />
+
+<app-componente-cambiante
+  [listado]="listado"
+  [valor]="valorInput"
+></app-componente-cambiante>

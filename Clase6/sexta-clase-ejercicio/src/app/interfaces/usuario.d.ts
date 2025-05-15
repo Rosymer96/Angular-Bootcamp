@@ -1,5 +1,9 @@
-export interface IUsuario {
+import { IUsuario } from './usuario.d';
+export interface IUsuario extends IUsuarioCreacion {
   id: number;
+}
+
+export interface IUsuarioCreacion {
   name: string;
   password: string;
   email: string;

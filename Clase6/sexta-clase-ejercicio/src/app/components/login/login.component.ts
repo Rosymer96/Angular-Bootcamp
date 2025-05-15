@@ -46,6 +46,7 @@ export class LoginComponent {
 
     if (usuarioObtenido) {
       this.router.navigate(['/usuarios']);
+      localStorage.setItem('token', `asad`);
     } else {
       this.messageError = 'No se ha encontrado el usuario';
     }

@@ -1,0 +1,5 @@
+<p>{{ valor() }}</p>
+
+@for (item of listado(); track $index){
+<app-elemento-listado [texto]="item"> </app-elemento-listado>
+}

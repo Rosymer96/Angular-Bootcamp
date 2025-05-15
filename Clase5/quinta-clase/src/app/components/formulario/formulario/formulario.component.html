@@ -1,0 +1,13 @@
+<form [formGroup]="form" (submit)="submit()">
+  <div class="control-container">
+    <label for="nombre">Nombre: </label>
+    <input type="text" name="nombre" formControlName="nombre" />
+  </div>
+  <div class="control-container">
+    <label for="contrasena">Contrasena: </label>
+    <input type="text" name="contrasena" formControlName="contrasena" />
+  </div>
+  <div class="button-container">
+    <button type="submit">Enviar</button>
+  </div>
+</form>
